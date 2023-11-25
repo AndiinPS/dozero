@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    {% if params.css %}
+    <link rel+"stylesheet" href="/static/css/{{params.css}}"/>
+    {% endif %}
+    <title>APS service-{{params.title}} </title>
+</head>
+<body>
+    <div id = "wrap">
+
+        <header>
+            <h1>APS</h1>
+        </header>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/contatos">Contatos</a>
+            <a href="/sobre">Sobre</a>
+        </nav>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            &copy; 2023 APS
+            <small><a href="/privacidade">Politicas de Privacidade</a></small>
+        </footer>
+    
+    </div>
+
+    {% if params.js %}
+</body>
+</html>
