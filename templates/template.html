@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/style.css">
-    {% if params.css %}
-    <link rel+"stylesheet" href="/static/css/{{params.css}}"/>
-    {% endif %}
-    <title>APS service-{{params.title}} </title>
-</head>
-<body>
-    <div id = "wrap">
-
-        <header>
-            <h1>APS</h1>
-        </header>
-
-        <nav>
-            <a href="/">Inicio</a>
-            <a href="/contatos">Contatos</a>
-            <a href="/sobre">Sobre</a>
-        </nav>
-
-        <main>
-            {% block content %}{% endblock %}
-        </main>
-
-        <footer>
-            &copy; 2023 APS
-            <small><a href="/privacidade">Politicas de Privacidade</a></small>
-        </footer>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css" />
     
+
+    {% if params.css %}
+      <link rel="stylesheet" href="/static/css/{{ params.css }}" />
+    {% endif %}
+
+    <title>APS service - {{ params.title }}</title>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header>
+        <h1>APS</h1>
+      </header>
+
+      <nav>
+        <a href="/">Início</a>
+        <a href="/contatos">Contatos</a>
+        <a href="/sobre">Sobre</a>
+      </nav>
+
+      <main>
+        {# Aqui será exibido o conteúdo HTMl da página. #}
+        {% block content %}
+
+        {% endblock %}
+      </main>
+
+      <footer>
+          APS<span>&#174;</span> 2023
+        <small><a href="/privacidade">Políticas de Privacidade</a></small>
+      </footer>
     </div>
 
+    <script src="/static/js/scripts.js"></script>
+
     {% if params.js %}
-</body>
+      <script src="/static/js/{{ params.js }}"></script>
+    {% endif %}
+  </body>
 </html>
